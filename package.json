@@ -1,0 +1,25 @@
+{
+  "name": "funcrawl",
+  "version": "0.0.0",
+  "description": "Functional Crawler",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "tape src/**/*.spec.js",
+    "lint": "eslint src/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zackferrofields/funcrawl.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zackferrofields/funcrawl/issues"
+  },
+  "homepage": "https://github.com/zackferrofields/funcrawl#readme",
+  "devDependencies": {
+    "eslint": "^3.12.2",
+    "tape": "^4.6.3"
+  }
+}
