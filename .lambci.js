@@ -1,8 +1,3 @@
 module.exports = {
-  cmd: 'npm i && npm test',
-  notifications: {
-    slack: {
-      channel: '#bots-funcrawl'
-    },
-  }
+  cmd: 'npm i && npm test'
 }
