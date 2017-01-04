@@ -1,5 +1,5 @@
 module.exports = {
-  cmd: 'npm i && npm test',
+  cmd: 'nave use 6 bash -c "npm i && npm test"'
   build: false,
   branches: {
     master: true,
