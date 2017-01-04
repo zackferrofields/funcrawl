@@ -1,7 +1,10 @@
 const http = require('http');
 const url = require('url');
 const { Future } = require('ramda-fantasy');
-const { compose } = require('ramda');
+const { compose, tryCatch } = require('ramda');
+
+//:: String -> Either Error Object
+const parse = tryCatch(compose(Future.of, url.parse), Future.reject);
 
 //:: Object -> Future Error [String]
 const httpGet = options => Future((reject, resolve) => {
@@ -14,6 +17,8 @@ const httpGet = options => Future((reject, resolve) => {
 });
 
 //:: String -> Future Error [String]
-const htmlGet = compose(httpGet, url.parse);
+const htmlGet = url =>
+  parse(url)
+  .chain(httpGet);
 
 module.exports = htmlGet;
