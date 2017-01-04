@@ -4,7 +4,7 @@ module.exports = {
   branches: {
     master: true,
     develop: true
-  }
+  },
   notifications: {
     slack: {
       channel: '#bots_funcrawl'
