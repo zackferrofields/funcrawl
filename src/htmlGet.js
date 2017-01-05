@@ -1,10 +1,13 @@
 const http = require('http');
 const url = require('url');
-const { Future } = require('ramda-fantasy');
-const { compose, tryCatch } = require('ramda');
+const { Future, Either } = require('ramda-fantasy');
+const tryEither = require('./utils/tryEither');
+
+//:: Either a b ~> Future a b
+const eitherToFuture = Either.either(Future.reject, Future.of);
 
 //:: String -> Either Error Object
-const parse = tryCatch(compose(Future.of, url.parse), Future.reject);
+const parse = tryEither(url.parse);
 
 //:: Object -> Future Error [String]
 const httpGet = options => Future((reject, resolve) => {
@@ -18,7 +21,7 @@ const httpGet = options => Future((reject, resolve) => {
 
 //:: String -> Future Error [String]
 const htmlGet = url =>
-  parse(url)
+  eitherToFuture(parse(url))
   .chain(httpGet);
 
 module.exports = htmlGet;
