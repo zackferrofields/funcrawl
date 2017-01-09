@@ -1,6 +1,6 @@
 const test = require('tape');
 const { Either } = require('ramda-fantasy');
-const tryEither = require('../tryEither');
+const tryEither = require('./index');
 
 const fn = (bol = true) => {
   if (bol) throw new Error();

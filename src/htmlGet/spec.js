@@ -1,6 +1,6 @@
 const test = require('tape');
 const { Future } = require('ramda-fantasy');
-const htmlGet = require('../htmlGet');
+const htmlGet = require('./index');
 
 const url = 'https://zackferrofields.github.io/';
 
