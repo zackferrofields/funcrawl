@@ -1,6 +1,6 @@
 const test = require('tape');
 const { Future, Either } = require('ramda-fantasy');
-const eitherToFuture = require('./eitherToFuture');
+const eitherToFuture = require('../eitherToFuture');
 
 test('eitherToFuture', t => {
   t.plan(4);

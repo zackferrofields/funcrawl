@@ -1,8 +1,8 @@
 const http = require('http');
 const url = require('url');
 const { Future } = require('ramda-fantasy');
-const tryEither = require('./utils/tryEither');
-const eitherToFuture = require('./utils/transforms/eitherToFuture');
+const tryEither = require('../utils/tryEither');
+const eitherToFuture = require('../utils/transforms/eitherToFuture');
 
 // :: String -> Either Error Object
 const parse = tryEither(url.parse);
