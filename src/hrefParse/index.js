@@ -15,13 +15,13 @@ const load = tryEither(cheerio.load);
 const startsWith = curry((x, y) => y.startsWith(x));
 
 // :: Object -> Boolean
-var isRelative = propSatisfies(startsWith('/'), 'href');
+const isRelative = propSatisfies(startsWith('/'), 'href');
 
 // :: Object -> Object -> Boolean
-var isHost = eqProps('hostname');
+const isHost = eqProps('hostname');
 
 // :: Object -> [Object] -> [Object]
-const urlFilter = curry((url, urls) => filter(anyPass([isRelative, isHost(url)]), urls));
+const urlFilter = url => filter(anyPass([isRelative, isHost(url)]));
 
 // ::String -> Future Error [Object]
 const hrefParse = html =>
