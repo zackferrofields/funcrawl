@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "tape 'src/**/*.spec.js'",
+    "test": "tape 'src/**/*spec.js'",
     "lint": "eslint 'src/**/*.js'"
   },
   "repository": {
@@ -23,6 +23,7 @@
     "tape": "^4.6.3"
   },
   "dependencies": {
+    "cheerio": "^0.22.0",
     "ramda": "^0.23.0",
     "ramda-fantasy": "^0.7.0"
   }
